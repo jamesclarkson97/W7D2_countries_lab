@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css" />
     <script type="text/javascript" src="./js/bundle.js"></script>
 </head>
 <body>
@@ -22,7 +23,17 @@
             <img id="flag-img" v-if="selectedCountry.flag" :src="selectedCountry.flag" />
             
             <h3>{{selectedCountry.timezones}}</h3>
-         </div>
+        </div>
+
+        <div id="favourite-button" v-if="selectedCountry">
+            <button v-on:click="addToFavourites">Add {{selectedCountry.name}} to your favourite countries?</button>
+        </div>
+
+        <div id="favourite-list">
+            <ul v-for="country in favouriteCountries">
+                <li>{{country}}</li>
+            </ul>
+        </div>
     </div>
 </body>
 </html>
