@@ -33,13 +33,13 @@
         </div>
 
         <div id="favourite-button" v-if="selectedCountry">
-            <button v-on:click="addToFavourites">Add {{selectedCountry.name}} to your favourite countries?</button>
+            <button v-if="!favouriteCountries.includes(selectedCountry)" v-on:click="addToFavourites">Add {{selectedCountry.name}} to your favourite countries?</button>
         </div>
 
         <div id="favourite-list">
             <h2>Favourite Countries:</h2>
             <ul v-for="country in favouriteCountries">
-                <li>{{country}}</li>
+                <li>{{country.name}}</li>
             </ul>
         </div>
     </div>

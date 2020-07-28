@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
                 .then(data => this.countries = data);
             },
             addToFavourites() {
-                this.favouriteCountries.push(this.selectedCountry.name);
+                this.favouriteCountries.push(this.selectedCountry);
             },
             findCountryByCode(code) {
                return this.countries.filter(country => code === country.alpha3Code)[0]
