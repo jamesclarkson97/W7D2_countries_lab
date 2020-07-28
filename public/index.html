@@ -23,6 +23,11 @@
             <img id="flag-img" v-if="selectedCountry.flag" :src="selectedCountry.flag" />
             
             <h3>{{selectedCountry.timezones}}</h3>
+            <h3>Neighbouring countries:</h3>
+            <ul v-for="code in selectedCountry.borders">
+               <li>{{ findCountryByCode(code).name }}</li> 
+            </ul>
+
         </div>
 
         <div id="favourite-button" v-if="selectedCountry">
@@ -30,6 +35,7 @@
         </div>
 
         <div id="favourite-list">
+            <h2>Favourite Countries:</h2>
             <ul v-for="country in favouriteCountries">
                 <li>{{country}}</li>
             </ul>

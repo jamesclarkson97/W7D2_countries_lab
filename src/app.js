@@ -27,6 +27,9 @@ document.addEventListener('DOMContentLoaded', ()=> {
             },
             addToFavourites() {
                 this.favouriteCountries.push(this.selectedCountry.name);
+            },
+            findCountryByCode(code) {
+               return this.countries.filter(country => code === country.alpha3Code)[0]
             }
         }
     });
