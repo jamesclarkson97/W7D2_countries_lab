@@ -30,6 +30,9 @@ document.addEventListener('DOMContentLoaded', ()=> {
             },
             findCountryByCode(code) {
                return this.countries.filter(country => code === country.alpha3Code)[0]
+            },
+            neighbouringCountryTotalPopulation(countries) {
+                return countries.reduce((total, country) => total + country.population, 0);
             }
         }
     });
