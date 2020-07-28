@@ -16,8 +16,13 @@
            </select>
         </form>
 
-        <h3>{{selectedCountry}}</h3>
+        <div v-if="selectedCountry">
+            <h3>{{selectedCountry.name}}</h3>
 
+            <img id="flag-img" v-if="selectedCountry.flag" :src="selectedCountry.flag" />
+            
+            <h3>{{selectedCountry.timezones}}</h3>
+         </div>
     </div>
 </body>
 </html>
