@@ -9,6 +9,13 @@
 <body>
     <div id="app">
         <h3>World Total Population: {{ totalPopulation }}</h3>
+
+        <form>
+           <select >
+              <option v-for="country in countries" value="country.name">{{country.name}}</option>
+           </select>
+        </form>
+
     </div>
 </body>
 </html>
