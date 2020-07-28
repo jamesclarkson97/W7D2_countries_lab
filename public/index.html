@@ -11,10 +11,12 @@
         <h3>World Total Population: {{ totalPopulation }}</h3>
 
         <form>
-           <select >
-              <option v-for="country in countries" value="country.name">{{country.name}}</option>
+           <select v-model="selectedCountry">
+              <option v-for="country in countries" :value="country">{{country.name}}</option>
            </select>
         </form>
+
+        <h3>{{selectedCountry}}</h3>
 
     </div>
 </body>
